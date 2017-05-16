@@ -17,8 +17,7 @@ public static class MelLog {
 
 	//Logarithmically scales strength based on the frequency of the strongest sample to immitate human hearing range.
 	//Return scaled strength.
-	private static float MelScale ( float _Strength, int _StrongestBin, int sampleCounts )
-	{
+	private static float MelScale ( float _Strength, int _StrongestBin, int sampleCounts ) {
 		float _Frequency = _StrongestBin * ( 44100 / sampleCounts ) + 2000f / ( _StrongestBin + 1 );
 		_Strength = 1127 * Mathf.Log ( 1 + ( _Frequency / 700f ) );
 
@@ -26,16 +25,11 @@ public static class MelLog {
 	}
 
 	//Get strongest bin (the frequency range with the strongest signal) between _Bottom and _Top and return it.
-	private static int GetStrongestBin ( float[] _Samples, int _Bottom, int _Top )
-	{
+	private static int GetStrongestBin ( float[] _Samples, int _Bottom, int _Top ) {
 		float _Strength = 0f;
 		int _StrongestIndex = 0;
-		for ( int i = _Bottom;
-			i < _Top;
-			++i )
-		{
-			if ( _Strength < _Samples[ i ] )
-			{
+		for ( int i = _Bottom; i < _Top; ++i ) {
+			if ( _Strength < _Samples[ i ] ) {
 				_Strength = _Samples[ i ];
 				_StrongestIndex = i;
 			}
@@ -44,15 +38,10 @@ public static class MelLog {
 	}
 
 	//Get strength of strongest bin and return it.
-	private static float GetStrongestBinStrength ( float[] _Samples, int _Bottom, int _Top )
-	{
+	private static float GetStrongestBinStrength ( float[] _Samples, int _Bottom, int _Top ) {
 		float _Strength = 0f;
-		for ( int i = _Bottom;
-			i < _Top;
-			++i )
-		{
-			if ( _Strength < _Samples[ i ] )
-			{
+		for ( int i = _Bottom; i < _Top; ++i ) {
+			if ( _Strength < _Samples[ i ] ) {
 				_Strength = _Samples[ i ];
 			}
 		}
