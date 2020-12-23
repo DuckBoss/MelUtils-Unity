@@ -11,3 +11,6 @@ Use the MelUtils.dll for faster processing.
 ## Alternative Usage :
 You could also use the C# scripts provided instead of the DLL.
 - Import the MelLog.cs/SpectrumData.cs to the Unity projects ../Assets/ folder.
+
+## Additional Versions:
+I've also uploaded a JavaScript version of MelUtils which can be used for non-unity projects.
